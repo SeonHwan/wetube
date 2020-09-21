@@ -12,19 +12,6 @@ const config = {
       filename: "styles.css",
     }),
   ],
-  //   [
-  //     new MiniCssExtractPlugin({
-  //       filename: "[name].css",
-  //       chunkFilename: "[id].css",
-  //     }),
-  //   ],
-  //   [
-  //     "postcss-preset-env",
-  //     {
-  //       //Options
-  //     },
-  //   ],
-  // ],
   entry: ["babel-polyfill", ENTRY_FILE],
   output: {
     path: OUTPUT_DIR,
