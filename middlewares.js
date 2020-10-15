@@ -6,8 +6,9 @@ export const multerVideo = multer({ dest: "uploads/videos/" });
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";
   res.locals.routes = routes;
-  res.locals.user = req.user || null;
-  console.log(req.user);
+  res.locals.loggedUser = req.user || null;
+  console.log("locals middleware");
+  console.log(req);
   next();
 };
 

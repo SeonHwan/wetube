@@ -50,3 +50,11 @@ button,
 input[type="submit"] {
   cursor: pointer;
 }
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
