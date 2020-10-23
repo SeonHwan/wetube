@@ -33,7 +33,7 @@ const routes = {
     console.log("user detail");
     console.log(id);
     if (id) {
-      return `users/${id}`;
+      return `/users/${id}`;
     } else {
       return USER_DETAIL;
     }

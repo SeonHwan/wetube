@@ -27,7 +27,8 @@ passport.use(
     {
       clientID: process.env.FB_ID,
       clientSecret: process.env.FB_SECRET,
-      callbackURL: `http://localhost:4000${routes.facebookCallback}`,
+      callbackURL: `https://ededbada28ff.ngrok.io/${routes.facebookCallback}`,
+      profileFields: ["id", "displayName", "email"],
     },
     facebookLoginCallback
   )
@@ -37,5 +38,8 @@ passport.serializeUser((user, done) => {
   done(null, user);
 });
 passport.deserializeUser((user, done) => {
-  done(null, user);
+  User.findById(user._id, (err, findUser) => {
+    // console.log(`deserialize user : ${findUser.username}`);
+    done(err, findUser);
+  });
 });

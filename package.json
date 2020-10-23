@@ -25,9 +25,10 @@
     "pug": "^3.0.0"
   },
   "scripts": {
-    "dev:server": "nodemon --exec babel-node init.js --delay 2 --ignore 'scss' ",
+    "dev:server": "nodemon --exec babel-node init.js --delay 2 --ignore '.scss' --ignore 'static' ",
     "dev:assets": "WEBPACK_ENV=development webpack -w",
-    "build:assets": "WEBPACK_ENV=production webpack"
+    "build:assets": "WEBPACK_ENV=production webpack",
+    "tunnel": "ngrok http 8080"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
