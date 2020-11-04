@@ -1,6 +1,6 @@
 import routes from "../routes";
 import Video from "../models/Video";
-import User from "../models/User";
+// import User from "../models/User";
 
 export const home = async (req, res) => {
   try {
@@ -54,6 +54,7 @@ export const videoDetail = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id).populate("creator");
+    console.log(video);
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
     res.redirect(routes.home);
